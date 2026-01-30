@@ -12,7 +12,7 @@
 * **EC2 배포**: Public Subnet 내 EC2 인스턴스를 생성하여 외부 접속 허용
 * **접속 정보**:
     * **Public IP**: `http://13.124.241.188:8080`
-    * <details><summary>
+<details><summary>
 AWS Budgets</summary>
 
 ![budget](https://github.com/user-attachments/assets/ec807cc5-4f8c-4c5e-8251-e3f1cb9563be)
