@@ -1,4 +1,7 @@
 package com.members.repository;
 
-public class MemberRepository {
+import com.members.entity.Member;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface MemberRepository extends JpaRepository<Member, Long> {
 }

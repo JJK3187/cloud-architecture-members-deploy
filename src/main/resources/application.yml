@@ -1,1 +1,13 @@
-spring.application.name=members
+spring:
+  profiles:
+    active: local
+
+logging:
+  level:
+    root: INFO
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
