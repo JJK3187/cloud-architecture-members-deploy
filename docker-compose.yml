@@ -36,7 +36,7 @@ services:
       SPRING_CONFIG_IMPORT: "aws-parameterstore:/config/application/"
       MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE: "health,info"
       MANAGEMENT_INFO_ENV_ENABLED: "true"
-      TEAM-NAME: ${team-name}
+      TEAM-NAME: ${teamname}
     ports:
       - "8080:8080"
     depends_on:
