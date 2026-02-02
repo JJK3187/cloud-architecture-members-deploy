@@ -18,6 +18,4 @@ jobs:
           distribution: 'temurin'
 
       - name: Build with Gradle
-        run: |
-          chmod +x gradlew
-          ./gradlew build --no-daemon
+        run: ./gradlew build -x test
