@@ -19,7 +19,7 @@ management:
       enabled: true
 
 info:
-  team-name: ${team-name:Default Team}
+  team-name: ${/config/application/team-name:Default Team}
 
 aws:
   paramstore:
