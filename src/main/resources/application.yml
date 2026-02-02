@@ -10,16 +10,16 @@ logging:
     "[API - LOG]": INFO
 
 management:
-  endpoints:
-    web:
-      exposure:
-        include: health, info
   info:
     env:
       enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "health,info"
 
 info:
-  team-name: ${TEAM_NAME:Default Team}
+  team-name: ${/config/application/team-name:Default Team}
 
 aws:
   paramstore:
