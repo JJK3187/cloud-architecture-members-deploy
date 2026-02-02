@@ -1,5 +1,5 @@
 
-# 클라우드 아키텍처 설계 및 배포 (LV 1)
+# 클라우드 아키텍처 설계 및 배포
 
 본 프로젝트는 API를 만들어 AWS 상에 배포하는 것을 연습하는 프로젝트 입니다.
 
@@ -12,10 +12,17 @@
 * **EC2 배포**: Public Subnet 내 EC2 인스턴스를 생성하여 외부 접속 허용
 * **접속 정보**:
     * **Public IP**: `http://13.124.241.188:8080`
+    * **/actuator/info**: http://13.124.241.188:8080/actuator/info
 <details><summary>
 AWS Budgets</summary>
 
 ![budget](https://github.com/user-attachments/assets/ec807cc5-4f8c-4c5e-8251-e3f1cb9563be)
+
+</details>
+<details><summary>
+RDS</summary>
+
+![RDS](https://github.com/user-attachments/assets/b08d9a7e-563a-4141-b120-8dcf224734b7)
 
 </details>
       
@@ -42,3 +49,15 @@ AWS Budgets</summary>
 * **INFO 로그**: 모든 API 요청 시 `[API - LOG] {메서드} {경로}` 형식으로 기록
 * **ERROR 로그**: 시스템 예외 발생 시 전역 예외 처리기(`@RestControllerAdvice`)를 통해 **스택트레이스(Stacktrace)** 포함 기록
 * **상태 모니터링**: `Spring Boot Actuator`를 도입하여 `/actuator/health` 엔드포인트 노출
+
+---
+
+## 4. CI/CD 자동화 및 배포 전략
+Docker 기반의 지속적 통합 및 배포(CI/CD) 환경을 구축
+
+---
+
+### 5. 외부 설정 관리 (AWS Parameter Store)
+보안이 중요한 설정값(DB URL, 계정 정보 등)은 AWS Systems Manager의 Parameter Store에서 관리하며, 애플리케이션 구동 시점에 주입받도록 설계
+* **적용 방식**: io.awspring.cloud:spring-cloud-aws-starter-parameter-store 의존성 활용
+* **장점**: 소스 코드에 민감 정보가 노출되지 않으며, 인프라 레벨에서 설정을 통합 관리 가능
