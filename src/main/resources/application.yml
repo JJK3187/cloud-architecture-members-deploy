@@ -1,6 +1,12 @@
 spring:
   profiles:
     active: local
+  cloud:
+    aws:
+      region:
+        static: ap-northeast-2
+      parameterstore:
+        enabled: true
   config:
     import: "aws-parameterstore:/config/application/"
 
@@ -19,7 +25,7 @@ management:
         include: "health,info"
 
 info:
-  team-name: ${teamname}
+  team-name: ${team-name}
 
 aws:
   paramstore:
