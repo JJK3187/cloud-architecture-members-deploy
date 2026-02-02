@@ -6,7 +6,7 @@ spring:
       parameterstore:
         enabled: true
   config:
-    import: "aws-parameterstore:/config/application/;optional=false"
+    import: "aws-parameterstore:/config/application/"
 
 logging:
   level:
@@ -20,7 +20,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: "health,info,env"
+        include: "health,info"
 
 info:
   team-name: ${team-name}
