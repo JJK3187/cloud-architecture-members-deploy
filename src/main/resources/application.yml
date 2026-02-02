@@ -1,13 +1,28 @@
 spring:
   profiles:
     active: local
+  config:
+    import: "aws-parameterstore:/config/application/"
 
 logging:
   level:
     root: INFO
+    "[API - LOG]": INFO
 
 management:
   endpoints:
     web:
       exposure:
-        include: health
+        include: health, info
+  info:
+    env:
+      enabled: true
+
+info:
+  team-name: ${team-name:Default Team}
+
+aws:
+  paramstore:
+    enabled: true
+    prefix: /config
+    name: application
