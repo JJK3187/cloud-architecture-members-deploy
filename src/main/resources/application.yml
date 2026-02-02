@@ -1,6 +1,4 @@
 spring:
-  profiles:
-    active: local
   cloud:
     aws:
       region:
@@ -8,7 +6,7 @@ spring:
       parameterstore:
         enabled: true
   config:
-    import: "aws-parameterstore:/config/application/"
+    import: "aws-parameterstore:/config/application/;optional=false"
 
 logging:
   level:
@@ -22,13 +20,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: "health,info"
+        include: "health,info,env"
 
 info:
   team-name: ${team-name}
-
-aws:
-  paramstore:
-    enabled: true
-    prefix: /config
-    name: application
