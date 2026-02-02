@@ -17,11 +17,18 @@ public class Member {
     private String name;
     private int age;
     private String mbti;
+    private String profileImageUrl;
+    private String s3Key;
 
     public Member(String name, int age, String mbti) {
         this.name = name;
         this.age = age;
         this.mbti = mbti;
+    }
+
+    public void updateProfileImageUrl(String s3Key, String profileImageUrl) {
+        this.s3Key = s3Key;
+        this.profileImageUrl = profileImageUrl;
     }
 
 }
