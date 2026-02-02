@@ -1,7 +1,7 @@
 name: cd.yml
 on:
   push:
-    branches: [ "main" ] # 메인 브랜치 푸시 시 배포
+    branches: [ "main" ]
 
 jobs:
   deploy:
@@ -9,29 +9,25 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # 1. Docker Buildx 설정 (멀티 플랫폼 빌드용)
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
-      # 2. Docker Hub 로그인
       - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      # 3. Docker 이미지 빌드 및 푸시 (ARM64 대상)
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
           context: .
-          platforms: linux/arm64  # t4g.small 서버 아키텍처에 맞춤
+          platforms: linux/arm64
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/members-app:latest
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-      # 4. EC2 접속 및 배포
       - name: Deploy to EC2
         uses: appleboy/ssh-action@master
         with:
@@ -40,10 +36,7 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             cd ~/app
-            # 기존 컨테이너 중지 및 최신 이미지 풀
             docker-compose down
             docker-compose pull
-            # 재실행
             docker-compose up -d
-            # 미사용 이미지 정리
             docker image prune -f
