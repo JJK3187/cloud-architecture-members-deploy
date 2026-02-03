@@ -32,6 +32,7 @@ https://memebers-kjj3187-files.s3.ap-northeast-2.amazonaws.com/https%3A//memeber
 
 </details> 
 expiration: "2026-02-10 01:36:25"
+
 ---
 
 ## 2. 애플리케이션 아키텍처
