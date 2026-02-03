@@ -33,6 +33,21 @@ https://memebers-kjj3187-files.s3.ap-northeast-2.amazonaws.com/https%3A//memeber
 </details> 
 expiration: "2026-02-10 01:36:25"
 
+<details><summary>
+github Actions</summary>
+
+![Github Actions](https://github.com/user-attachments/assets/4384c10a-43a9-485c-9b59-326b39d940c4)
+
+
+</details>
+
+<details><summary>
+EC2 터미널</summary>   
+
+![docker](https://github.com/user-attachments/assets/f03f4341-6492-4f3e-804d-e7f337cdbb2e)
+
+</details>
+
 ---
 
 ## 2. 애플리케이션 아키텍처
