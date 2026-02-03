@@ -25,7 +25,13 @@ RDS</summary>
 ![RDS](https://github.com/user-attachments/assets/b08d9a7e-563a-4141-b120-8dcf224734b7)
 
 </details>
-      
+
+<details><summary>
+Presigned URL</summary>
+https://memebers-kjj3187-files.s3.ap-northeast-2.amazonaws.com/https%3A//memebers-kjj3187-files.s3.ap-northeast-2.amazonaws.com/profiles/3def436a-e0eb-45d5-99cc-58cc6eb4926e-%25EC%258B%25A4%25EC%258A%25B56.jpg?X-Amz-Security-Token=IQoJb3JpZ2luX2VjECkaDmFwLW5vcnRoZWFzdC0yIkcwRQIhANZa%2BM0Fcf4ffB1NkxxOG1t1EHqisRx1Uh1GN5Mj8v5gAiAoKaUNK0xSHzOlnD8T1n%2FK26UUoeAyF%2Fee2aOa8XGz9yrRBQjy%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDU3NDA3MDY2NTQ4OSIMji7xvOG47c4%2BHkLCKqUFAmdbIIftaw6zvlCDdO6srOQG%2Fo2QVhalEERngFy%2Bn9AxoqiP5owwTB6ADZ0qhk26mSmdqJbJL3WyD%2FtKeqR71TUQ%2FgSvxanYCqxNHlyeNGNVMf%2Bdg70xVzXcmzESyoMPxSd7%2BE2%2B4up9z0CWqIPo7J%2FhV5%2F2Ht1GrdyBna9WtM03lrvrG6DWYlUFQpKl7MEEYRYqXIuyH%2FwVy0NBgYBKFajHCQTcf96ckJB%2B8kDyFkkMoFZ%2BAMZJ7ond7kKTyta8KshuiYQtZUJGFDCD6nwWssh8gYnowcfWsyqPk%2BhWZ7ck%2FO%2B7%2BqlJToRTEUEB%2F734gDO9b1IrzCp6NCVatQuTo9f%2F%2FSsTre5d%2B774CVDDbshaP0CrlfLO%2FBo0PymYnAewV04%2BmwFkX%2FIR6fes3t11SMj3Qw%2FYSj6HKvzgRj94XqGVlBEe%2Bj7vPosLhK%2FYvgBKETs0SzXNgx8%2FoUOILwdaB%2BSTyGNL1FFlWQPhd0Y1orDwZHb6UD1LGotBRO0SFzDVmKEoEW%2FhFoe%2FKLf012HnfurFBAUuXQD%2Bu37r75vtXZjKRsjL9ZyK3l2a%2F450TzowD6X%2B0iv83wirtncFdBAaDWVgbhVuvAuDUir%2BFDKwVBvR3lDzHp2npHt9Q2JzAKQDgoURHrpeTlxkc1zhcJYpkGOxbvo0iXV%2FZs5PU5bmRFLsYKHb6q92eCczpcIt41czFMfVLL9slicMhjmR3iu6PWEsyxYUc2w4rjU3KTjGBHyARLsb%2BHSyuFCcaAiEsqsBeOBvltUyGfH8e6CzUi057R6TNEZB2BOn44KgKl0%2FPxnTqpsnj8Xud3oJ8yQKTb%2B%2FOybPd02rxSLgzuFpd%2F8VGeKVHF1zS1tCgupVj0I1%2FKqndvKGBMYTiPnUzsXG6LQhIMr64UUwjoSFzAY6sQGzeVl0zLTj%2B1%2FjqlQDgdJT%2BA1kfCQoJk97nSrY%2FTkqvxWQAUvfE0lrWa1ZhFu2ay5RunmMfIFuyY2MlFG3VveOGx6J8cE8qLiVwhoLzwoGJ2vzo%2F44kM3sMvJxY4YfxlUypj4XaRSsJXd%2BzYtap7an8BK9vfHjRxbblv1Qmd1DPGM4DJ5S%2FCk7xbYfhgkingcS62DiHGekqxbYkC5OFz5YcOJj3YNhALey2XusPjHg88Q%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20260203T013625Z&X-Amz-SignedHeaders=host&X-Amz-Credential=ASIAYLKKHGEI4563JWXD%2F20260203%2Fap-northeast-2%2Fs3%2Faws4_request&X-Amz-Expires=604800&X-Amz-Signature=269f3e0701d2fbae86fd2cb8db5b95669c0930e173df2998b212adefdcec7e33
+
+</details> 
+expiration: "2026-02-10 01:36:25"
 ---
 
 ## 2. 애플리케이션 아키텍처
@@ -35,6 +41,8 @@ RDS</summary>
 | :--- | :--- | :--- |
 | **POST** | `/api/members` | 팀원 정보(이름, 나이, MBTI) 저장 |
 | **GET** | `/api/members/{id}` | 저장된 팀원 정보 조회 |
+| **POST** | `/api/members/{id}/profile-image` | 프로필 이미지 저장 |
+| **GET** | `/api/members/{id}/profile-image` | 프로필 이미지 Presigned URL 조회 |
 
 ---
 
