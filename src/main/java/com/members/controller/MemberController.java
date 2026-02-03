@@ -38,7 +38,7 @@ public class MemberController {
         return ResponseEntity.status(HttpStatus.OK).body(memberService.getOne(memberId));
     }
 
-    @PostMapping(value = "/api/members/{memberId}/profile-image)", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    @PostMapping(value = "/api/members/{memberId}/profile-image", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<ProfileImageUploadResponse> uploadProfileImage(
             @PathVariable("memberId") Long memberId,
             @RequestPart("file") MultipartFile file ) throws IOException
@@ -47,7 +47,7 @@ public class MemberController {
         return ResponseEntity.ok(new ProfileImageUploadResponse(imageUrl));
     }
 
-    @GetMapping("/api/members/{memberId}/profile-image)")
+    @GetMapping("/api/members/{memberId}/profile-image")
     public ResponseEntity<ProfileImageGetResponse> getProfileImage(@PathVariable("memberId") Long memberId) {
         String presignedUrl = memberService.getPresignedUrl(memberId);
 

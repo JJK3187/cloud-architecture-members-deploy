@@ -1,4 +1,7 @@
 spring:
+  config:
+    import: ""
+
   datasource:
     url: jdbc:h2:mem:test;MODE=MySQL
     driver-class-name: org.h2.Driver
@@ -18,3 +21,15 @@ spring:
       hibernate:
         format_sql: true
         use_sql_comments: true
+
+  cloud:
+    aws:
+      s3:
+        bucket: memebers-kjj3187-files
+      region:
+        static: ap-northeast-2
+      parameterstore:
+        enabled: false
+
+team-name: "local-test-team"
+S3_BUCKET_NAME: "memebers-kjj3187-files"
